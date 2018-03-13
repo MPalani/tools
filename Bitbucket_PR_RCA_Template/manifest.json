@@ -1,0 +1,22 @@
+{
+  "name": "Bitbucket pull request RCA template",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Bitbucket pull request RCA template",
+  "icons":{
+    "64": "img/checklistIcon64x64.png",
+   "128": "img/checklistIcon128x128.png"
+  },
+  "browser_action": {
+    "default_icon": "img/checklistIcon64x64.png"
+  },
+  "permissions": [
+      "tabs", "https://bitbucket-eng-sjc1.cisco.com/bitbucket/projects/ENGSDN/*/pull-requests?create*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://bitbucket-eng-sjc1.cisco.com/bitbucket/projects/ENGSDN/*/pull-requests?create*"],
+        "js": ["src/content.js"]
+      }
+  ]
+}
